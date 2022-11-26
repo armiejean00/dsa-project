@@ -41,24 +41,24 @@ def main(stdscr):
 	for y,x in snake:
 		stdscr.addstr(y, x, '#')
 
-	# create food
+	
 	food = create_food(snake, box)
 	stdscr.addstr(food[0], food[1], '*')
 
-	# print score
+	
 	score = 0
 	score_text = "Score: {}".format(score)
 	stdscr.addstr(1, sw//2 - len(score_text)//2, score_text)
 
 	while 1:
-		# non-blocking input
+		
 		key = stdscr.getch()
 			
-		# set direction if user pressed any arrow key and that key is not opposite of current direction
+	
 		if key in DIRECTIONS_LIST and key != OPPOSITE_DIRECTION_DICT[direction]:
 			direction = key
 
-		# find next position of snake head
+		
 		head = snake[0]
 		if direction == curses.KEY_RIGHT:
 			new_head = [head[0], head[1]+1]
@@ -69,29 +69,29 @@ def main(stdscr):
 		elif direction == curses.KEY_UP:
 			new_head = [head[0]-1, head[1]]
 
-		# insert and print new head
+		
 		stdscr.addstr(new_head[0], new_head[1], '#')
 		snake.insert(0, new_head)
 		
-		# if sanke head is on food
+		
 		if snake[0] == food:
-			# update score
+		
 			score += 1
 			score_text = "Score: {}".format(score)
 			stdscr.addstr(1, sw//2 - len(score_text)//2, score_text)
 			
-			# create new food
+		
 			food = create_food(snake, box)
 			stdscr.addstr(food[0], food[1], '*')
 
-			# increase speed of game
+			
 			stdscr.timeout(100 - (len(snake)//3)%90)
 		else:
-			# shift snake's tail
+			
 			stdscr.addstr(snake[-1][0], snake[-1][1], ' ')
 			snake.pop()
 
-		# conditions for game over
+		
 		if (snake[0][0] in [box[0][0], box[1][0]] or 
 			snake[0][1] in [box[0][1], box[1][1]] or 
 			snake[0] in snake[1:]):
