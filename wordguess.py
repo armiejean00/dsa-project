@@ -1,6 +1,18 @@
 from random import randint
 import os
 
+
+
+def main():
+	print(" Word Guessing Game ".center(60,'-'))
+	while True:
+		random_word = getRandomWord()
+		word_guess(random_word)
+		choice = input("Do You Wanna Play(yes/no) :")
+		if choice in ['no','No','NO','n','N']:
+			break
+
+
 file = open('words.txt','r')
 words = file.readlines()
 length = len(words)
@@ -51,15 +63,6 @@ def word_guess(random_word):
 		print(f"\n Sorry your guesses were wrong, the word was '{random_word}'\n")		
 
 
-def main():
-	print(" Word Guessing Game ".center(60,'-'))
-	while True:
-		random_word = getRandomWord()
-		word_guess(random_word)
-		choice = input("Do You Wanna Play(yes/no) :")
-		if choice in ['no','No','NO','n','N']:
-			break
 
 
-if __name__ == '__main__':
-	main()
+print(main())

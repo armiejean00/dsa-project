@@ -1,33 +1,42 @@
 import time
 import os
-print("This is about games that implement queue, stack and linked-list.")
+
+
+def clear():
+    os.system('clear||cls')
 def print_menu():
 
-    print("::::    ::::  :::::::::: ::::    ::: :::    :::")
-    print("+:+:+: :+:+:+ :+:        :+:+:   :+: :+:    :+:")
-    print("+:+ +:+:+ +:+ +:+        :+:+:+  +:+ +:+    +:+")
-    print("+#+  +:+  +#+ +#++:++#   +#+ +:+ +#+ +#+    +:+")
-    print("+#+       +#+ +#+        +#+  +#+#+# +#+    +#+")
-    print("#+#       #+# #+#        #+#   #+#+# #+#    #+#")
-    print("###       ### ########## ###    ####  #########")
-        
-    print("************************************************")
-    print("*                 1.Play                       *")
-    print("*                 2.About                      *")
-    print("*                 3.Exit                       *")
-    print("************************************************")
+    clear()
+    print('\u001b[36;1m****************************************************************************************************************************')
+    print('*                                                                                                                          *')
+    print('*                                                                                                                          *')
+    print('*                                             ███╗   ███╗███████╗███╗   ██╗██╗   ██╗                                       *')
+    print('*                                             ████╗ ████║██╔════╝████╗  ██║██║   ██║                                       *')
+    print('*                                             ██╔████╔██║█████╗  ██╔██╗ ██║██║   ██║                                       *')
+    print('*                                             ██║╚██╔╝██║██╔══╝  ██║╚██╗██║██║   ██║                                       *')
+    print('*                                             ██║ ╚═╝ ██║███████╗██║ ╚████║╚██████╔╝                                       *')
+    print('*                                             ╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝ ╚═════╝                                        *')
+    print('*                                                                                                                          *')        
+    print("*                                                                                                                          *")
+    print("*                                                                1.Play                                                    *")
+    print("*                                                                2.About                                                   *")
+    print("*                                                                3.Exit                                                    *")
+    print('*                                                                                                                          *')
+    print("****************************************************************************************************************************\u001b[37m")
 
 
-print_menu()
-option=input("Make a choice||...: ")
-if option == "1":
-    time.sleep(2.0)
-    from menu import print_menu1
-elif option == "2":
-    print("This is about games that implement queue, stack and linked-list.")
-    
-elif option == "3":
-    exit()
+  
+    option=input("Enter your choce: ")
+    if option == "1":
+        time.sleep(1.0)
+        clear()
+        from menu import print_menu1
+    elif option == "2":
+      clear()
+      print("This is about games that implement queue, stack and linked-list.")
+      print(print_menu())
+    elif option == "3":
+     exit()
 
-
+print(print_menu())
 

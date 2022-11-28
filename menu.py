@@ -1,39 +1,44 @@
+import time
+import os
+import time, sys
 
+def clear():
+    os.system('clear||cls') 
 def print_menu1():
+    print('*******************************************************************************')
+    print('*                                                                             *')
+    print('*                                                                             *')
+    print('*                      ██████╗  █████╗ ███╗   ███╗███████╗                    *')
+    print('*                     ██╔════╝ ██╔══██╗████╗ ████║██╔════╝                    *')
+    print('*                     ██║  ███╗███████║██╔████╔██║█████╗                      *')
+    print('*                     ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝                      *')
+    print('*                     ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗                    *')
+    print('*                      ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝                    *')    
+    print("*                                                                             *")
+    print("*                                    1.Stack                                  *")
+    print("*                                    2.Queue                                  *")
+    print("*                                    3.Link-List                              *")
+    print("*                                    4.Quit                                   *")
+    print('*                                                                             *')
+    print("*******************************************************************************")
+    option=input("Enter your choice: ")
+    if option == "1":
+     time.sleep(2.0)
+     clear()
+     from stack_menu import print_menu4
+    elif option == "2":
+      clear()
+      from queue_menu import print_menu3
 
+ 
+    elif option == "3":
+      clear()
+      from link_menu import print_menu5
 
-    print(" ::::::::      :::     ::::    ::::  ::::::::::")
-    print(":+:    :+:   :+: :+:   +:+:+: :+:+:+ :+:       ")
-    print("+:+         +:+   +:+  +:+ +:+:+ +:+ +:+       ")
-    print(":#:        +#++:++#++: +#+  +:+  +#+ +#++:++#  ")
-    print("+#+   +#+# +#+     +#+ +#+       +#+ +#+       ")
-    print("#+#    #+# #+#     #+# #+#       #+# #+#       ")
-    print(" ########  ###     ### ###       ### ##########")
-        
-    print("************************************************")
-    print("*                 1.Stack                      *")
-    print("*                 2.Queue                      *")
-    print("*                 3.Link-List                  *")
-    print("*                 4.Quit                       *")
-    print("************************************************")
-    
-    while 1:
+    elif option == "4":
+      exit()
 
-        ch = int(input("Enter your choice: "))
-        if ch == 1:
-          import stack_menu
-          stack_menu4
-        elif ch == 2:
-            import queue_menu
-            queue_menu3
-        elif ch == 3:
-            from link_menu import print_menu5
-        elif ch == 4:
-            break
-        else:
-            print("Wrong Choice!")
-            
-            return print_menu1()
+     
 
 
 print(print_menu1())

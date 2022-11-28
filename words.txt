@@ -98,3 +98,5 @@ vollyball
 jumping
 basketball
 editor
+keyboard
+laptop
